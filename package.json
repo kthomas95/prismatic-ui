@@ -57,5 +57,12 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "@emotion/core": "^10.0.22",
+    "@emotion/styled": "^10.0.23",
+    "@styled-system/should-forward-prop": "^5.1.2",
+    "emotion-theming": "^10.0.19",
+    "styled-system": "^5.1.2"
+  }
 }

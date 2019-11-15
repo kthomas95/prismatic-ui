@@ -1,22 +1,12 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+// import React from "react";
+import Box from "./box";
+import Button from "./button";
+import Grid from "./grid";
+// import Text from "./text";
+// import Input from "./input";
+import Flex from "./flex";
+import { Card } from "./card";
+import { SiteTheme, ThemeProvider } from "./site-theme";
 
-import styles from './styles.css'
-
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  }
-
-  render() {
-    const {
-      text
-    } = this.props
-
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
-}
+// export { Box, Button, Grid, Text, Input, Flex, Card, SiteTheme, ThemeProvider };
+export { Box, ThemeProvider, SiteTheme, Card, Button, Flex, Grid };

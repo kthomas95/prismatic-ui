@@ -1,10 +1,12 @@
 import styled from "@emotion/styled";
-import Flex from "./flex";
+import Flex from "../layout/flex";
+import Box from "../layout/box";
 import shouldForwardProp from "@styled-system/should-forward-prop";
 
 const defaultColors = ["gray", "gray", "gray"];
 
 const solidButton = ({ colorOffset, theme, colors }) => ({
+  transition: "background-color .5s",
   backgroundColor: theme.colors[colors][500 + (colorOffset % 5) * 100],
   color: theme.colors[colors][colorOffset > -1 ? 100 : 900],
   "&:hover": {
@@ -23,7 +25,8 @@ const outlineButton = ({ theme, colors, colorOffset }) => ({
 
 const Button = styled(Flex, { shouldForwardProp })(
   {
-    fontWeight: 800
+    fontWeight: 800,
+    display: "inline-flex"
   },
   props => (props.outline ? outlineButton(props) : solidButton(props)),
   props => ({

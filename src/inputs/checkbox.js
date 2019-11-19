@@ -23,12 +23,12 @@ const CheckboxContainer = styled(Box)(props => ({
   }
 }));
 
-const Checkbox = forwardRef(({ children, ref, ...props }) => (
+const Checkbox = forwardRef(({ children, ...props }, ref) => (
   <CheckboxContainer
     display="inline-flex"
     as="label"
     ref={ref}
-    for={props.id}
+    htmlFor={props.id}
     css={{ cursor: "pointer", "*": { cursor: "pointer" } }}
   >
     <Box

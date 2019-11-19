@@ -27,7 +27,6 @@ const SBox = styled.div`
     props.hoverBg &&
     `
         &:hover {
-            background-color: ${themeGet(`colors.${props.hoverBg}`)(props)};
         }
     `}
   ${[]}

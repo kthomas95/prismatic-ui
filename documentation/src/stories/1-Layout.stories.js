@@ -4,7 +4,7 @@ export default {
   title: "Layout"
 };
 
-const boxProps = { p: 4, m: 2, bg: "gray.200", boxShadow: 2 };
+const boxProps = { p: 4, m: 2, bg: "green.300", boxShadow: 2 };
 
 const boxItems = (
   <>
@@ -17,7 +17,9 @@ const boxItems = (
 export const box = () => (
   <>
     <h2>Box</h2>
-    <Box {...boxProps}>Box</Box>
+    <Box {...boxProps} hoverBg="green">
+      Box
+    </Box>
   </>
 );
 

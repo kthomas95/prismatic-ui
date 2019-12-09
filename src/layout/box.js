@@ -2,60 +2,48 @@ import styled from "@emotion/styled";
 import shouldForwardProp from "@styled-system/should-forward-prop";
 import {
   space,
-  gridColumn,
-  gridRow,
   borderRadius,
+  shadow,
   position,
-  boxShadow,
-  borders,
-  flexBasis,
+  border,
   display,
   overflow,
   layout,
   color,
-  style,
   typography,
-  flexGrow,
   compose
 } from "styled-system";
-
-const transition = style({ prop: "transition", cssProperty: "transition" });
-const transform = style({ props: "transform", cssProperty: "transform" });
 
 const SBox = styled.div`
   ${props =>
     props.hoverBg &&
     `
         &:hover {
+            background-color: ${props.hoverBg};
         }
     `}
   ${[]}
 `;
 
-const Box = styled(SBox, { shouldForwardProp })(
+const Box = styled("div", { shouldForwardProp })(
   compose(
     space,
     color,
-    transition,
-    flexGrow,
-    transform,
-    gridColumn,
-    gridRow,
     typography,
     layout,
     borderRadius,
     position,
-    boxShadow,
-    borders,
-    flexBasis,
+    shadow,
+    border,
     display,
     position,
     overflow
-  )
+  ),
+  props => ({ "&:hover": { backgroundColor: "red.100" } })
 );
 
-Box.defaultProps = {
-  as: "div"
-};
+// Box.defaultProps = {
+//   as: "div"
+// };
 
 export default Box;

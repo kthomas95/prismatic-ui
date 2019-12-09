@@ -1,6 +1,6 @@
 {
   "name": "prismatic-ui",
-  "version": "1.0.3",
+  "version": "1.0.8",
   "description": "A collection of React UI components.",
   "author": "kthomas95",
   "license": "MIT",
@@ -60,6 +60,7 @@
   ],
   "dependencies": {
     "@emotion/core": "^10.0.22",
+    "@emotion/is-prop-valid": "^0.8.5",
     "@emotion/styled": "^10.0.23",
     "@styled-system/should-forward-prop": "^5.1.2",
     "emotion-theming": "^10.0.19",

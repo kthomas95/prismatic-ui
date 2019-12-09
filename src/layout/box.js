@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import shouldForwardProp from "@styled-system/should-forward-prop";
+import isPropValid from "@emotion/is-prop-valid";
 import {
   space,
   borderRadius,
@@ -14,16 +14,10 @@ import {
   compose
 } from "styled-system";
 
-const SBox = styled.div`
-  ${props =>
-    props.hoverBg &&
-    `
-        &:hover {
-            background-color: ${props.hoverBg};
-        }
-    `}
-  ${[]}
-`;
+const shouldForwardProp = prop =>
+  isPropValid(prop) &&
+  prop !== "color" &&
+  ["activeStyle", "activeClassName"].includes(prop);
 
 const Box = styled("div", { shouldForwardProp })(
   compose(

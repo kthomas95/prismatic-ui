@@ -1,23 +1,30 @@
 import PseudoBox from "../PseudoBox";
 import React, { forwardRef } from "react";
 
-const SolidProps = color => ({
-    bg: `${color}.400`,
+const SolidProps = (color, offset) => ({
+    bg: `${color}.${500 + offset * 100}`,
+    color: `${color == "neutral" ? "neutral" : "gray"}.${
+        offset > 0 ? 200 : 800
+    }`,
     border: 0,
     _hover: {
-        bg: `${color}.300`
+        boxShadow: "lg",
+        bg: `${color}.${offset != -4 ? 400 + offset * 100 : 200}`
     },
     _active: {
-        transform: "translateX(-2px)"
+        transform: "translateX(-1px)"
     }
 });
 
 const OutlineProps = color => ({
     bg: "transparent",
     border: "solid 1px",
-    borderColor: `${color}.800`,
+    color: `${color}.${color == "neutral" ? 700 : 500}`,
+    borderColor: `${color}.500`,
     _hover: {
-        boxShadow: 2
+        boxShadow: "lg",
+        borderColor: `${color}.300`,
+        fontWeight: 900
     },
     _active: {
         transform: "translateX(-1px)"
@@ -25,10 +32,12 @@ const OutlineProps = color => ({
 });
 
 const Button = forwardRef(
-    ({ colors = "gray", outline = false, ...rest }, ref) => (
+    ({ colors = "gray", outline = false, colorOffset = 0, ...rest }, ref) => (
         <PseudoBox
-            {...(outline ? OutlineProps(colors) : SolidProps(colors))}
             {...rest}
+            {...(outline
+                ? OutlineProps(colors)
+                : SolidProps(colors, colorOffset))}
         />
     )
 );
@@ -38,16 +47,23 @@ Button.displayName = "Button";
 Button.defaultProps = {
     display: "flex",
     p: 2,
-    borderRadius: 1,
+    borderRadius: 2,
     as: "button",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
+    appearance: "none",
     fontSize: 1,
-    boxShadow: 1,
-    colors: "gray",
-    fontWeight: 700,
-    colorOffset: 0
+    boxShadow: "md",
+    colors: "neutral",
+    fontFamily: "inherit",
+    fontWeight: 800,
+    colorOffset: 0,
+    transition: "all 250ms",
+    userSelect: "none",
+    whiteSpace: "nowrap",
+    verticalAlign: "middle",
+    lineHeight: "1.2"
 };
 
 export default Button;

@@ -1,10 +1,10 @@
-import { get } from "../theme/colors-utils";
-
 const baseProps = {
     userSelect: "none",
-    border: "2px",
-    rounded: "md",
+    border: "solid 2px",
+    borderRadius: 1,
     borderColor: "inherit",
+    height: ".75em",
+    width: ".75em",
     transition: "background-color 120ms, box-shadow 250ms"
 };
 
@@ -12,11 +12,12 @@ const interactionProps = ({ color, colorMode }) => {
     const isDarkMode = colorMode === "dark";
     const _color = isDarkMode ? 200 : 500;
     return {
-        color: "white",
+        color: "neutral.400",
+        borderRadius: 1,
         _checked: {
-            bg: get(color, _color),
-            borderColor: get(color, _color),
-            color: isDarkMode ? "gray.900" : undefined
+            bg: `${color}.${_color}`,
+            borderColor: `${color}.${_color}`,
+            color: "neutral.100"
         },
         _checkedAndDisabled: {
             borderColor: isDarkMode ? "transparent" : "gray.200",
@@ -28,7 +29,7 @@ const interactionProps = ({ color, colorMode }) => {
             borderColor: isDarkMode ? "transparent" : "gray.100"
         },
         _focus: {
-            boxShadow: "outline"
+            boxShadow: "focusring"
         },
         _invalid: {
             borderColor: isDarkMode ? "red.300" : "red.500"
@@ -45,9 +46,11 @@ const useCheckboxStyle = props => {
 
     return {
         ...baseProps,
-        ...(props.size && { rounded: "sm" }),
-        ...interactionProps(props),
-        size: sizes[props.size]
+        // ...(props.size && { borderRadius: 1 }),
+
+        ...interactionProps(props)
+        // size: sizes[props.size],
+        // size: 5
     };
 };
 

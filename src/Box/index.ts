@@ -254,9 +254,7 @@ const Box: React.FC<BoxProps> = styled("div", {
 })(truncate, systemProps);
 
 Box.displayName = "Box";
-Box.defaultProps = {
-    borderRadius: 4
-};
+Box.defaultProps = { transition: "color .3s, background-color .3s" };
 
 export default Box;
 

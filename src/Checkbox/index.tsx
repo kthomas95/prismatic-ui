@@ -1,12 +1,32 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-import { forwardRef, useEffect, useRef } from "react";
+import { forwardRef, useEffect, useRef, useMemo } from "react";
 import Box from "../Box";
-import ControlBox from "../ControlBox";
 import Icon from "../Icon";
+import ControlBox from "../ControlBox";
 import VisuallyHidden from "../VisuallyHidden";
+
 import useCheckboxStyle from "./styles";
-import { useForkRef, useVariantColorWarning } from "../utils";
+
+export const useForkRef = (refA, refB) => {
+    return useMemo(() => {
+        if (refA == null && refB == null) {
+            return null;
+        }
+        return refValue => {
+            setRef(refA, refValue);
+            setRef(refB, refValue);
+        };
+    }, [refA, refB]);
+};
+
+export function setRef(ref, value) {
+    if (typeof ref === "function") {
+        ref(value);
+    } else if (ref) {
+        ref.current = value;
+    }
+}
 
 const Checkbox = forwardRef(
     (
@@ -20,7 +40,7 @@ const Checkbox = forwardRef(
             defaultIsChecked,
             isChecked,
             isFullWidth,
-            size = "md",
+            size = 3,
             isDisabled,
             isInvalid,
             isReadOnly,
@@ -37,13 +57,10 @@ const Checkbox = forwardRef(
     ) => {
         // Wrong usage of `variantColor` prop is quite common
         // Let's add a warning hook that validates the passed variantColor
-        useVariantColorWarning("Checkbox", variantColor);
 
-        const { colorMode } = useColorMode();
         const styleProps = useCheckboxStyle({
             color: variantColor,
-            size,
-            colorMode
+            size
         });
 
         const ownRef = useRef();
@@ -60,6 +77,7 @@ const Checkbox = forwardRef(
                 as="label"
                 display="inline-flex"
                 verticalAlign="top"
+                fontSize={size}
                 alignItems="center"
                 width={isFullWidth ? "full" : undefined}
                 cursor={isDisabled ? "not-allowed" : "pointer"}
@@ -101,7 +119,8 @@ const Checkbox = forwardRef(
                 {children && (
                     <Box
                         ml={2}
-                        fontSize={size}
+                        fontWeight={600}
+                        fontStyle="italic"
                         userSelect="none"
                         opacity={isDisabled ? 0.4 : 1}
                     >

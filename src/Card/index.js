@@ -9,7 +9,7 @@ Card.defaultProps = {
     borderRadius: 2,
     p: 2,
     color: "neutral.700",
-    bg: "neutral.100",
+    bg: "neutral.300",
     alignItems: "center",
     textAlign: "center",
     flexDirection: "column"

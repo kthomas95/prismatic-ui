@@ -39,7 +39,7 @@ const invertTheme = colors => {
 };
 
 export const ThemeModeWrapper = ({ children }) => {
-    const [night, setNight] = useState(true);
+    const [night, setNight] = useState(false);
     return (
         <ThemeContext.Provider
             value={{ night, toggleNight: () => setNight(!night) }}

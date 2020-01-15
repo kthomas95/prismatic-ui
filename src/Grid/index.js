@@ -6,7 +6,7 @@ import {
     justifyItems,
     alignContent
 } from "styled-system";
-import Box from "../layout/box";
+import Box from "../Box";
 
 export default styled(Box)(
     { display: "grid" },

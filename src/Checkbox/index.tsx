@@ -2,11 +2,81 @@
 import { jsx } from "@emotion/core";
 import { forwardRef, useEffect, useRef, useMemo } from "react";
 import Box from "../Box";
-import Icon from "../Icon";
+import Flex from "../layout/flex";
 import ControlBox from "../ControlBox";
 import VisuallyHidden from "../VisuallyHidden";
-
+import { FiCheck } from "react-icons/fi";
 import useCheckboxStyle from "./styles";
+
+export interface ICheckbox {
+    /**
+     * id assigned to input
+     */
+    id?: string;
+    /**
+     * The name of the input field in a checkbox
+     * (Useful for form submission).
+     */
+    name?: string;
+    /**
+     * The value to be used in the checkbox input.
+     * This is the value that will be returned on form submission.
+     */
+    value?: string | number;
+    /**
+     * The color scheme of the checkbox.
+     *
+     * 🚨Note: This should be one of the color keys in the theme that has `100` - `900` color values (e.g.`green`, `red`).
+     * @see http://chakra-ui.com/theme#colors
+     */
+    variantColor?: string;
+    /**
+     * If `true`, the checkbox will be initially checked.
+     */
+    defaultIsChecked?: boolean;
+    /**
+     * If `true`, the checkbox will be checked.
+     * You'll need to pass `onChange` to update it's value (since it's now controlled)
+     */
+    isChecked?: boolean;
+    /**
+     * If `true`, the checkbox should take up the full width of the parent.
+     */
+    isFullWidth?: boolean;
+    /**
+     * The size (width and height) of the checkbox
+     */
+    size?: "sm" | "md" | "lg";
+    /**
+     * If `true`, the checkbox will be disabled
+     */
+    isDisabled?: boolean;
+    /**
+     * If `true`, the checkbox will be readonly
+     */
+    isReadOnly?: boolean;
+    /**
+     * If `true`, the checkbox is marked as invalid.
+     * Changes style of unchecked state.
+     */
+    isInvalid?: boolean;
+    /**
+     * The callback invoked when the checked state of the `Checkbox` changes..
+     */
+    onChange?: React.ChangeEventHandler<HTMLInputElement>;
+    /**
+     * If `true`, the checkbox will be indeterminate.
+     * This only affects the icon shown inside checkbox
+     * and does not modify the isChecked property.
+     */
+    isIndeterminate?: boolean;
+    /**
+     * The children is the label to be displayed to the right of the checkbox.
+     */
+    children?: React.ReactNode;
+}
+
+export type CheckboxProps = ICheckbox & React.RefAttributes<HTMLInputElement>;
 
 export const useForkRef = (refA, refB) => {
     return useMemo(() => {
@@ -28,7 +98,7 @@ export function setRef(ref, value) {
     }
 }
 
-const Checkbox = forwardRef(
+const Checkbox: React.FC<CheckboxProps> = forwardRef(
     (
         {
             id,
@@ -38,7 +108,7 @@ const Checkbox = forwardRef(
             "aria-labelledby": ariaLabelledBy,
             variantColor = "blue",
             defaultIsChecked,
-            isChecked,
+            checked,
             isFullWidth,
             size = 3,
             isDisabled,
@@ -49,8 +119,8 @@ const Checkbox = forwardRef(
             onFocus,
             isIndeterminate,
             children,
-            iconColor,
-            iconSize = "10px",
+            // iconColor,
+            // iconSize = "10px",
             ...rest
         },
         ref
@@ -80,10 +150,13 @@ const Checkbox = forwardRef(
                 fontSize={size}
                 alignItems="center"
                 width={isFullWidth ? "full" : undefined}
-                cursor={isDisabled ? "not-allowed" : "pointer"}
+                // cursor={isDisabled ? "not-allowed" : "pointer"}
                 {...rest}
             >
-                <VisuallyHidden
+                <Box
+                    //VHIDDEN
+                    opacity={0}
+                    position="absolute"
                     as="input"
                     type="checkbox"
                     aria-label={ariaLabel}
@@ -97,31 +170,35 @@ const Checkbox = forwardRef(
                     defaultChecked={isReadOnly ? undefined : defaultIsChecked}
                     checked={
                         isReadOnly
-                            ? Boolean(isChecked)
+                            ? Boolean(checked)
                             : defaultIsChecked
                             ? undefined
-                            : isChecked
+                            : checked
                     }
                     disabled={isDisabled}
                     readOnly={isReadOnly}
                     aria-readonly={isReadOnly}
                     aria-invalid={isInvalid}
-                    aria-checked={isIndeterminate ? "mixed" : isChecked}
+                    aria-checked={isIndeterminate ? "mixed" : checked}
                 />
-                <ControlBox opacity={isReadOnly ? 0.8 : 1} {...styleProps}>
-                    <Icon
-                        name={isIndeterminate ? "minus" : "check"}
-                        size={iconSize}
-                        color={iconColor}
-                        transition="transform 240ms, opacity 240ms"
-                    />
-                </ControlBox>
+                <Flex
+                    opacity={isReadOnly ? 0.8 : 1}
+                    border="solid 2px"
+                    height="1.25em"
+                    fontWeight={800}
+                    color={`${variantColor}.400`}
+                    borderColor="neutral.500"
+                    borderRadius={1}
+                    width="1.25em"
+                >
+                    {checked ? <FiCheck strokeWidth={4} /> : ""}
+                </Flex>
                 {children && (
                     <Box
                         ml={2}
                         fontWeight={600}
-                        fontStyle="italic"
-                        userSelect="none"
+                        // fontStyle="italic"
+                        // userSelect="none"
                         opacity={isDisabled ? 0.4 : 1}
                     >
                         {children}
@@ -131,6 +208,8 @@ const Checkbox = forwardRef(
         );
     }
 );
+
+// const Checkbox = () => <Box>Checkbox</Box>;
 
 Checkbox.displayName = "Checkbox";
 

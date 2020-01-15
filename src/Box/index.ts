@@ -1,9 +1,10 @@
 /** @jsx jsx */
-import styled from "@emotion/styled";
+import styled, { StyledComponent } from "@emotion/styled";
 import {
     createShouldForwardProp,
     props
 } from "@styled-system/should-forward-prop";
+
 import isPropValid from "@emotion/is-prop-valid";
 import {
     background,
@@ -19,8 +20,9 @@ import {
     compose
 } from "styled-system";
 import extraConfig from "./config";
-import * as StyledSystem from "styled-system";
+
 // import * as Emotion from "@emotion/styled";
+import * as StyledSystem from "styled-system";
 import * as React from "react";
 import { Omit } from "../common-types";
 
@@ -31,7 +33,8 @@ type borderColor = StyledSystem.BorderColorProps["borderColor"];
 
 interface ICustomConfig {
     // Custom borderRadius alias
-    rounded?: borderRadius;
+    rounded?: borderColor;
+    rrounded?: borderColor;
     roundedTop?: borderRadius;
     roundedBottom?: borderRadius;
     roundedLeft?: borderRadius;
@@ -182,11 +185,6 @@ interface As {
     as?: React.ElementType;
 }
 
-type TypographyProps = Omit<
-    StyledSystem.TypographyProps,
-    "fontWeight" | "lineHeight" | "fontSize" | "letterSpacing"
->;
-
 interface Truncated {
     /**
      * If `true`, the text will be truncated
@@ -206,12 +204,11 @@ type StyledSystemProps = StyledSystem.LayoutProps &
     StyledSystem.OpacityProps &
     StyledSystem.OverflowProps;
 
-type ModifiedStyledSystemProps = TypographyProps &
-    IFontSize &
+type ModifiedStyledSystemProps = IFontSize &
     ILetterSpacing &
     IFontWeight &
-    ILineHeight &
-    ICustomConfig;
+    ILineHeight;
+// ICustomConfig;
 
 type BoxHTMLProps = React.RefAttributes<any> & React.HTMLAttributes<any>;
 
@@ -249,6 +246,7 @@ const shouldForwardProp = prop =>
     (isPropValid(prop) || ["activeStyle", "activeClassName"].includes(prop)) &&
     prop !== "color";
 
+// declare const Box: React.FC<BoxProps>;
 const Box: React.FC<BoxProps> = styled("div", {
     shouldForwardProp
 })(truncate, systemProps);
@@ -257,5 +255,3 @@ Box.displayName = "Box";
 Box.defaultProps = { transition: "color .3s, background-color .3s" };
 
 export default Box;
-
-// declare const Box: React.FC<BoxProps>;

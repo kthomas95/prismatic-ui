@@ -11,7 +11,7 @@ import {
 } from "prismatic-ui";
 import { Global } from "@emotion/core";
 // automatically import all files ending in *.stories.js
-configure(require.context("../src/stories", true, /\.stories\.js$/), module);
+// configure(require.context("../src/stories", true, /\.stories\.tsx$/), module);
 
 const WithToggle = ({ children }) => {
     const { night, toggleNight } = useContext(ThemeContext);

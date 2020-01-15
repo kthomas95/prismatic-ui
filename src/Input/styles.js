@@ -59,7 +59,6 @@ const filledStyle = ({
     errorBorderColor,
     colorMode
 }) => {
-    const bg = { light: "neutral.100", dark: "whiteAlpha.50" };
     const hoverColor = { light: "neutral.200", dark: "whiteAlpha.100" };
 
     // const _focusBorderColor = get(
@@ -155,19 +154,19 @@ const baseProps = {
 export const inputSizes = {
     lg: {
         fontSize: 3,
-        px: 4,
+        px: 3,
         lineHeight: "3rem",
         borderRadius: 2
     },
     md: {
         fontSize: 2,
-        px: 4,
+        px: 3,
         lineHeight: "2.5rem",
         borderRadius: 1
     },
     sm: {
         fontSize: 1,
-        px: 3,
+        px: 2,
         lineHeight: "2rem",
         borderRadius: 1
     }

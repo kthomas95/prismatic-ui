@@ -1,5 +1,4 @@
 import { ThemeProvider } from "emotion-theming";
-import iconPaths from "./IconPaths";
 export { ThemeProvider };
 
 export const InterFont = `
@@ -127,7 +126,6 @@ const colors = {
 };
 
 export const SiteTheme = {
-    iconPaths,
     colors: { ...colors, neutral: colors.gray },
     buttons: {
         primary: {

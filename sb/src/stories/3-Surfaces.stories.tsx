@@ -42,9 +42,8 @@ export const heading = () => (
 
 export const card = () => (
     <div>
-        <Card maxWidth={256} m={2}>
+        <Card maxWidth={256} m={2} name={"kyle"}>
             <Heading>Card Title</Heading>
-            <Box as="p">Card Content</Box>
         </Card>
     </div>
 );

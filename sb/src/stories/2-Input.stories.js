@@ -4,10 +4,11 @@ import {
     Button,
     Grid,
     Box,
+    Input,
     TextField,
     Checkbox,
-    Input,
-    CheckButton,
+    Card,
+    // CheckButton,
     ThemeContext
 } from "prismatic-ui";
 import { addDecorator } from "@storybook/react";
@@ -52,9 +53,27 @@ export const checkbox = () => {
                 >
                     Checkbox
                 </Checkbox>
+                <br />
+                <Checkbox
+                    variantColor="blue"
+                    id="checkbox"
+                    checked={checked2}
+                    onChange={() => setChecked2(!checked2)}
+                >
+                    Checkbox
+                </Checkbox>
+                <br />
+                <Checkbox
+                    variantColor="purple"
+                    id="checkbox"
+                    checked={checked3}
+                    onChange={() => setChecked3(!checked3)}
+                >
+                    Checkbox
+                </Checkbox>
             </Box>
             <h3>Check Button</h3>
-            <CheckButton
+            {/* <CheckButton
                 checked={checked2}
                 onChange={() => setChecked2(!checked2)}
                 colors="purple"
@@ -68,7 +87,7 @@ export const checkbox = () => {
                 colors={checked3 ? "green" : "red"}
             >
                 Toggle Me! {`(${checked3 ? "T" : "F"})`}
-            </CheckButton>
+            </CheckButton> */}
         </>
     );
 };

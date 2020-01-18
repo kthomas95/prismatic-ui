@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import origStyled, { CreateStyled } from "@emotion/styled";
 import {
     space,
     color,
@@ -13,31 +13,35 @@ import {
     ColorProps,
     TypographyProps,
     LayoutProps,
-    FlexProps,
+    FlexboxProps,
     GridProps,
     BorderProps,
     PositionProps,
     ShadowProps
 } from "styled-system";
+import { GlobalProps } from "@emotion/core";
 import shouldForwardProp from "@styled-system/should-forward-prop";
 import React from "react";
+import { Theme } from "../Theme";
 
-export interface BoxProps {
+export const styled = origStyled as CreateStyled<Theme>;
+
+export interface BoxProps
+    extends SpaceProps,
+        ColorProps,
+        FlexboxProps,
+        GridProps,
+        LayoutProps,
+        TypographyProps,
+        BorderProps,
+        PositionProps,
+        ShadowProps {
     // children: React.ReactNode;
+    as?: React.ElementType;
     color?: any;
 }
 
-export const Box: React.FC<BoxProps &
-    ColorProps &
-    SpaceProps &
-    ColorProps &
-    TypographyProps &
-    LayoutProps &
-    FlexProps &
-    GridProps &
-    BorderProps &
-    PositionProps &
-    ShadowProps> = styled("div", { shouldForwardProp })(
+export const Box = styled("div", { shouldForwardProp })<BoxProps>(
     space,
     color,
     typography,

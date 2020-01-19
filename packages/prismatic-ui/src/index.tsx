@@ -6,6 +6,9 @@ import { Card } from "./Card";
 import { Badge } from "./Badge";
 import { Message } from "./Message";
 import { SiteTheme } from "./Theme";
+import { Heading } from "./Heading";
+import { Checkbox } from "./Checkbox";
+import { TextField } from "./TextField";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "emotion-theming";
 export {
@@ -15,6 +18,9 @@ export {
     Flex,
     SiteTheme,
     Grid,
+    Heading,
+    TextField,
+    Checkbox,
     GlobalStyle,
     Card,
     Badge,

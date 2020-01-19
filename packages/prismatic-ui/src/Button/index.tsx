@@ -46,6 +46,11 @@ export const Button = styled(Box)<ButtonProps>(
 Button.defaultProps = {
     as: "button",
     p: 2,
+    fontSize: 1,
+    fontFamily: "inherit",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     borderRadius: 4,
     border: "solid 1px",
     boxShadow: 1,

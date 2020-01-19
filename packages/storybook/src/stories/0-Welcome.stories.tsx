@@ -1,10 +1,8 @@
 import React from "react";
-import { linkTo } from "@storybook/addon-links";
-import { Welcome } from "@storybook/react/demo";
 import { Grid, Box, Flex } from "prismatic-ui/dist";
 export default {
     title: "Prismatic-UI",
-    component: Welcome
+    id: "0"
 };
 
 const colorTypes = [
@@ -42,7 +40,6 @@ export const colors = () => (
                             p={3}
                             justifyContent="center"
                             alignItems="center"
-                            fontWeight={700}
                             borderRadius={4}
                             fontSize={2}
                             boxShadow={3}

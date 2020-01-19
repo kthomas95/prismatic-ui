@@ -96,6 +96,7 @@ export const SiteTheme = {
             warning,
             danger,
             success,
+            alpha: "hsla(220, 16%, 36%, .4)",
             text: { ...darkGrey, text: lightGrey.verylight },
             background: { ...lightGrey, text: darkGrey.dark }
         }
@@ -109,6 +110,7 @@ export const SiteTheme = {
             warning,
             danger,
             success,
+            alpha: "hsla(218, 25%, 97%, .3)",
             background: { ...darkGrey, text: lightGrey.verylight },
             text: { ...lightGrey, text: darkGrey.dark }
         }

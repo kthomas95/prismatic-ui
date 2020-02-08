@@ -1,11 +1,14 @@
 import React from "react";
 import { Box } from "../Box";
-import { FiCheck } from "react-icons/fi";
+import { FiCheck, FiMinus } from "react-icons/fi";
+import { PseudoBox } from "../PseudoBox";
 
 export const Checkbox = ({
     children,
     checked,
     onChange,
+    indeterminate,
+    checkIcon = FiCheck,
     variantColor = "primary",
     userSelect = "none",
     ...props
@@ -14,7 +17,11 @@ export const Checkbox = ({
         as="label"
         display="inline-flex"
         alignItems="center"
-        style={{ userSelect: "none" }}
+        _css={{
+            verticalAlign: "middle",
+            userSelect: "none",
+            cursor: "pointer"
+        }}
         {...props}
     >
         <Box
@@ -24,19 +31,30 @@ export const Checkbox = ({
             opacity={0}
             position={"absolute"}
         />
-        <Box
+        <PseudoBox
             height="1.15em"
             width="1.15em"
-            mr={2}
+            flexShrink={0}
+            mr={children ? 2 : 0}
             border="solid 1px"
-            borderRadius={2}
-            color={`${variantColor}.text`}
+            borderRadius={4}
+            color={checked ? `${variantColor}.text` : "transparent"}
             borderColor={checked ? `${variantColor}.dark` : "alpha"}
             display="inline-flex"
+            _css={{
+                transition: "background-color .5s, border-color .5s, color .5s"
+            }}
             justifyContent="center"
             alignItems="center"
             bg={checked ? `${variantColor}.light` : "transparent"}
-            children={checked ? <FiCheck strokeWidth={3} /> : null}
+            children={
+                checked ? (
+                    <Box
+                        as={indeterminate ? FiMinus : checkIcon}
+                        strokeWidth={3}
+                    />
+                ) : null
+            }
         />
         {children}
     </Box>

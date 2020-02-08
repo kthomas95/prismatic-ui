@@ -12,8 +12,8 @@ export const GlobalStyle = () => (
             },
             body: {
                 margin: 0,
-                color: theme.colors.text.dark,
-                backgroundColor: theme.colors.background.light
+                color: theme.colors.text.main,
+                backgroundColor: theme.colors.background.main
             }
         })}
     />

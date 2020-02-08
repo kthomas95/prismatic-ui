@@ -1,24 +1,26 @@
 import React from "react";
-import { Box, styled } from "../Box";
-import { boxShadow } from "styled-system";
+import { BoxProps } from "../Box";
+import { PseudoBox, PseudoBoxProps } from "../PseudoBox";
 
-export const TextField = styled(Box)(({ theme }) => ({
-    transition: "border-color .5s",
-    "&:focus": {
-        borderColor: theme.colors["primary"].main,
-        boxShadow: theme.shadows[1]
-    }
-}));
+export const TextField: React.FC<BoxProps & PseudoBoxProps> = ({
+    _css,
+    ...props
+}) => (
+    <PseudoBox
+        {...{
+            ...props
+        }}
+    />
+);
 
 TextField.defaultProps = {
     as: "input",
     px: 2,
     py: 1,
     bg: "background.verylight",
+    _focus: { boxShadow: 1, borderColor: "primary.main" },
     color: "text.verylight",
-    boxShadow: 0,
     border: "solid 1px",
     borderColor: "alpha",
-    borderRadius: 3,
-    type: "text"
+    borderRadius: 4
 };

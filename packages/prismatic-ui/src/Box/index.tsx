@@ -1,3 +1,4 @@
+/** @jsx jsx */
 import origStyled, { CreateStyled } from "@emotion/styled";
 import {
     space,
@@ -19,10 +20,12 @@ import {
     PositionProps,
     ShadowProps
 } from "styled-system";
-import { GlobalProps } from "@emotion/core";
+import { motion } from "framer-motion";
+import toCss, { SystemCssProperties } from "@styled-system/css";
 import shouldForwardProp from "@styled-system/should-forward-prop";
 import React from "react";
 import { Theme } from "../Theme";
+import { InterpolationWithTheme } from "@emotion/core";
 
 export const styled = origStyled as CreateStyled<Theme>;
 
@@ -35,13 +38,17 @@ export interface BoxProps
         TypographyProps,
         BorderProps,
         PositionProps,
-        ShadowProps {
-    // children: React.ReactNode;
+        ShadowProps,
+        React.RefAttributes<any>,
+        React.AllHTMLAttributes<any> {
     as?: React.ElementType;
+    _css?: SystemCssProperties;
     color?: any;
 }
 
-export const Box = styled("div", { shouldForwardProp })<BoxProps>(
+export const Box = origStyled("div", {
+    shouldForwardProp
+})<BoxProps>(
     space,
     color,
     typography,
@@ -50,5 +57,8 @@ export const Box = styled("div", { shouldForwardProp })<BoxProps>(
     grid,
     border,
     position,
-    shadow
+    shadow,
+    ({ _css }) => toCss(_css)
 );
+
+export const MotionBox = motion.custom(Box);

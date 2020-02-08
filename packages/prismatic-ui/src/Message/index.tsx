@@ -5,18 +5,26 @@ interface MessageProps {
     variantColor?: string;
 }
 
-export const Message = styled(Box)<MessageProps & BoxProps>(
-    ({ theme, variantColor = "primary", ...props }) => ({
-        borderColor: theme.colors[variantColor].dark,
-        color: props.color || theme.colors[variantColor].text,
-        backgroundColor: theme.colors[variantColor].verylight,
-        borderLeftWidth: "4px",
-        borderLeftStyle: "solid"
-    })
+export const Message: React.FC<BoxProps & MessageProps> = ({
+    variantColor = "primary",
+    ...props
+}) => (
+    <Box
+        {...{
+            color: `${variantColor}.text`,
+            bg: `${variantColor}.light`,
+            borderColor: `${variantColor}.dark`,
+            ...props
+        }}
+    />
 );
 
 Message.defaultProps = {
-    p: 2,
+    p: 3,
+    lineHeight: 1.25,
+    boxShadow: 2,
+    borderLeftWidth: "4px",
+    borderLeftStyle: "solid",
     borderTopRightRadius: 4,
     borderBottomRightRadius: 4
 };

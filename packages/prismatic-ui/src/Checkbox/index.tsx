@@ -42,7 +42,7 @@ export const Checkbox = ({
             borderColor={checked ? `${variantColor}.dark` : "alpha"}
             display="inline-flex"
             _css={{
-                transition: "background-color .5s, border-color .5s, color .5s"
+                transition: "background-color .3s, border-color .3s, color .3s"
             }}
             justifyContent="center"
             alignItems="center"

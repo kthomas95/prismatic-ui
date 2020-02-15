@@ -16,6 +16,19 @@ import {
 } from "prismatic-ui/dist";
 import { animated } from "react-spring";
 import cardData from "./card_data.json";
+import { IconButton } from "prismatic-ui/dist/Button";
+import {
+    FiTrash,
+    FiHome,
+    FiCalendar,
+    FiAlertCircle,
+    FiSmile,
+    FiMenu,
+    FiPlus,
+    FiTrash2,
+    FiShare2,
+    FiShare
+} from "react-icons/fi";
 
 export default {
     title: "Inputs",
@@ -85,7 +98,7 @@ export const autocomplete = () => {
             <h3>Autocomplete {text}</h3>
             <Autocomplete
                 wrapperProps={{ mb: 4 }}
-                height={96}
+                height={212}
                 inputHeight={32}
                 open={text !== "" && cards.length > 0}
                 {...{ value: text, setText }}
@@ -94,6 +107,7 @@ export const autocomplete = () => {
                     height={"100%"}
                     overflowX="auto"
                     gridGap={3}
+                    p={1}
                     gridTemplateRows="100%"
                     gridAutoColumns="1fr"
                     gridAutoFlow="column"
@@ -101,7 +115,7 @@ export const autocomplete = () => {
                     {cards.map(card => (
                         <Button
                             key={card.id}
-                            minWidth={200}
+                            minWidth={400}
                             p={2}
                             onClick={() => {
                                 // console.log("hi");
@@ -235,6 +249,7 @@ export const textField = () => {
 export const button = () => (
     <>
         <h3>Buttons</h3>
+        <h4>Solid Buttons</h4>
         <Grid gridAutoColumns={"max-content"} gridAutoFlow="column" gridGap={2}>
             {buttons.map(color => (
                 <Button
@@ -245,8 +260,21 @@ export const button = () => (
                     {color[0].toUpperCase() + color.slice(1)}
                 </Button>
             ))}
+            <Button variantColor="primary" leftIcon={FiPlus}>
+                Add Item
+            </Button>
+            <Button variantColor="error" rightIcon={FiTrash2}>
+                Delete Item
+            </Button>
+            <IconButton variantColor="error" icon={FiTrash2} />
+            <IconButton
+                variantColor="primary"
+                variant="outline"
+                icon={FiShare}
+            />
         </Grid>
-        <br />
+        <hr />
+        <h4>Outline Buttons </h4>
         <Grid gridAutoColumns={"max-content"} gridAutoFlow="column" gridGap={2}>
             {buttons.map(color => (
                 <Button variantColor={color} variant="outline">
@@ -254,5 +282,27 @@ export const button = () => (
                 </Button>
             ))}
         </Grid>
+        <hr />
+        <h4>Icon Buttons</h4>
+        <Grid gridGap={2} gridAutoColumns="max-content" gridAutoFlow="column">
+            <IconButton icon={FiHome} variantColor="primary" />
+            <IconButton icon={FiCalendar} variantColor="secondary" />
+            <IconButton icon={FiSmile} variantColor="success" />
+            <IconButton icon={FiAlertCircle} variantColor="warning" />
+            <IconButton icon={FiTrash} variantColor="error" />
+            <IconButton icon={FiPlus} variantColor="success" label="Add Card" />
+        </Grid>
+        <br />
+        <IconButton icon={FiMenu} size="2rem" variantColor="primary" />
+        <IconButton icon={FiMenu} size="4rem" variantColor="text" />
+        <IconButton
+            icon={FiMenu}
+            size="3em"
+            variantColor="background"
+            position="fixed"
+            bottom={0}
+            right={0}
+            m={2}
+        />
     </>
 );

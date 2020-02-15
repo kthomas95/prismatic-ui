@@ -1,9 +1,9 @@
 import React, { forwardRef } from "react";
 
-import { Box, BoxProps } from "../Box";
+import { Box, BoxProps, MotionBox } from "../Box";
 import { TextField } from "../TextField";
 import { PseudoBox, PseudoBoxProps } from "../PseudoBox";
-import { useSpring, animated } from "react-spring";
+// import { useSpring, animated } from "react-spring";
 
 interface Autocomplete extends PseudoBoxProps {
     open: boolean;
@@ -37,11 +37,6 @@ export const Autocomplete: React.FC<Autocomplete> = ({
     wrapperProps,
     ...props
 }) => {
-    const styles = useSpring({
-        height: open ? height : 0,
-        padding: open ? resultBoxPadding : 0,
-        borderTopWidth: open ? 1 : 0
-    });
     return (
         <Box
             maxHeight={inputHeight}
@@ -78,19 +73,21 @@ export const Autocomplete: React.FC<Autocomplete> = ({
                     // type="text"
                     // {...{ value, ...inputProps }}
                 />
-                <Box
-                    as={animated.div}
-                    style={styles}
-                    // overflowX="auto"
+                <MotionBox
+                    animate={{
+                        height: open ? height : 0,
+                        borderTopWidth: open ? 1 : 0
+                    }}
+                    border={0}
                     bg={bg}
                     zIndex={1000}
                     borderTopStyle="solid"
                     borderColor="alpha"
-                    // bg="primary.verylight"
+                    bg="background.verylight"
                     {...resultBoxProps}
                 >
                     {open && children}
-                </Box>
+                </MotionBox>
             </PseudoBox>
         </Box>
     );

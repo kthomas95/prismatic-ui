@@ -7,6 +7,7 @@ import {
     Box,
     PrismaticApp,
     ThemeContext,
+    IconButton,
     GlobalStyle
 } from "prismatic-ui/dist";
 import { FiSun, FiMoon } from "../../prismatic-ui/node_modules/react-icons/fi";
@@ -24,15 +25,15 @@ addParameters({
 const ToggleButton = () => {
     const { theme, toggleTheme } = useContext(ThemeContext);
     return (
-        <Button
+        <IconButton
+            icon={theme === "night" ? FiMoon : FiSun}
             onClick={() => toggleTheme()}
-            style={{ float: "right" }}
+            position="fixed"
+            top={0}
+            right={0}
             m={2}
-            variantColor="text"
-            variant="outline"
-        >
-            {theme === "night" ? <FiMoon /> : <FiSun />}
-        </Button>
+            variantColor="background"
+        />
     );
 };
 

@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import { Theme, Color } from "../Theme";
-import { BoxProps } from "../Box";
+import { BoxProps, Box } from "../Box";
 import { PseudoBox, PseudoBoxProps } from "../PseudoBox";
 import { StyledComponent, CreateStyledComponentBase } from "@emotion/styled";
 import { motion } from "framer-motion";
@@ -42,7 +42,7 @@ const StyleButton = (color, variant) =>
     variant === "default"
         ? {
               regularStyles: {
-                  color: `${color}.text`,
+                  color: color === "background" ? "text.main" : `${color}.text`,
                   bg: `${color}.main`,
                   borderColor: `${color}.main`
               },
@@ -84,6 +84,9 @@ export const Button: React.FC<BoxProps &
             _active,
             variantColor = "primary",
             variant = "default",
+            leftIcon,
+            rightIcon,
+            children,
             ...props
         },
         ref
@@ -101,10 +104,33 @@ export const Button: React.FC<BoxProps &
                     _hover: { ...hoverStyles, ..._hover },
                     _active: { ...activeStyles, ..._active }
                 }}
-            />
+            >
+                {leftIcon && <Box as={leftIcon} mr={2} />}
+                {children}
+                {rightIcon && <Box as={rightIcon} ml={2} />}
+            </PseudoBox>
         );
     }
 );
+
+export const IconButton = ({
+    icon: Icon,
+    size,
+    width = "1em",
+    height = "1em",
+    ...props
+}) => (
+    <Button {...{ width, height, fontSize: size, ...props }}>
+        <Icon fontSize=".5em" />
+    </Button>
+);
+
+IconButton.defaultProps = {
+    borderRadius: "50%",
+    size: "2.5em"
+    // height: "2.5em",
+    // width: "2.5em"
+};
 
 export const MotionButton = motion.custom(Button);
 

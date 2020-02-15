@@ -1,21 +1,10 @@
 import React, { useContext } from "react";
 import { Grid, Box, Flex, Button, ThemeContext } from "prismatic-ui/dist";
+import { colorTypes, colorScales } from "./colorTypes";
 export default {
     title: "Prismatic-UI",
     id: "0"
 };
-
-export const colorTypes = [
-    "primary",
-    "secondary",
-    "background",
-    "text",
-    "error",
-    "danger",
-    "warning",
-    "success"
-];
-export const colorScales = ["verylight", "light", "main", "dark"];
 
 export const colors = () => {
     return (

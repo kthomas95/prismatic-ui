@@ -1,21 +1,11 @@
 import React from "react";
-import { Box } from "../Box";
-import { motion } from "framer-motion";
-import { animated, useSpring } from "react-spring";
-
-const MotionBox = motion.custom(Box);
+import { MotionBox } from "../Box";
 
 const DrawerStyles = {
     left: {}
 };
 
-export const Drawer = ({ children, ...props }) => {
-    const styles = useSpring({
-        [["left", "right"].includes(props.direction)
-            ? "width"
-            : "height"]: props.open ? 300 : 0
-    });
-
+export const Drawer = ({ children, size = 350, ...props }) => {
     return (
         <MotionBox
             {...props}
@@ -39,8 +29,9 @@ export const Drawer = ({ children, ...props }) => {
             animate={{
                 [["left", "right"].includes(props.direction)
                     ? "width"
-                    : "height"]: props.open ? 350 : 0
+                    : "height"]: props.open ? size : 0
             }}
+            transition={{ mass: 100 }}
             children={props.open && children}
         />
     );

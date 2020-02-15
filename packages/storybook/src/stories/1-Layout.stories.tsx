@@ -110,23 +110,21 @@ export const drawer = () => {
                 bg="primary.main"
                 color="primary.text"
             >
-                {open && (
-                    <Box p={2}>
-                        <h3>Filter Results</h3>
-                        <Button
-                            position="absolute"
-                            right={0}
-                            top={0}
-                            width={32}
-                            height={32}
-                            m={2}
-                            variantColor="error"
-                            onClick={e => setOpen(!open)}
-                        >
-                            X
-                        </Button>
-                    </Box>
-                )}
+                <Box p={2}>
+                    <h3>Filter Results</h3>
+                    <Button
+                        position="absolute"
+                        right={0}
+                        top={0}
+                        width={32}
+                        height={32}
+                        m={2}
+                        variantColor="error"
+                        onClick={e => setOpen(!open)}
+                    >
+                        X
+                    </Button>
+                </Box>
             </Drawer>
         </Box>
     );

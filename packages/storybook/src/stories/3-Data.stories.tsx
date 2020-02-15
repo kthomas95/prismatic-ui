@@ -12,9 +12,11 @@ import {
     MotionButton as Button,
     List,
     AnimatedList,
-    Drawer
+    Drawer,
+    Loader,
+    IconButton
 } from "prismatic-ui/dist";
-import { colorTypes } from "./0-Welcome.stories";
+import { colorTypes } from "./colorTypes";
 import cardData from "./card_data.json";
 
 export default {
@@ -34,6 +36,14 @@ const CardData = [
     { value: 17, label: "Goals", color: "secondary" },
     { value: 12, label: "Assists", color: "danger" }
 ];
+
+export const loader = () => (
+    <>
+        <h4>Loader</h4>
+        <IconButton icon={Loader} size={48} />
+        <Loader size={48} color="primary.main" />
+    </>
+);
 
 export const card = () => (
     <>

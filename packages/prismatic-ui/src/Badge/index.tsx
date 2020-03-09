@@ -20,8 +20,8 @@ export const Badge: React.FC<BadgeProps & BoxProps> = ({
 }) => (
     <Box
         {...{
-            bg: `${variantColor}.main`,
-            color: `${variantColor}.text`,
+            bg: `${variantColor}.verylight`,
+            color: `${variantColor}.dark`,
             _css: { ..._css, textTransform: "uppercase" },
             ...props
         }}

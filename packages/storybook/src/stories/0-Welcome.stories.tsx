@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Grid, Box, Flex, Button, ThemeContext } from "prismatic-ui/dist";
-import { colorTypes, colorScales } from "./colorTypes";
+import { colorTypes, colorScales } from "../colorTypes";
 export default {
     title: "Prismatic-UI",
     id: "0"
@@ -10,7 +10,7 @@ export const colors = () => {
     return (
         <>
             <h2>Colors</h2>
-            <Flex justifyContent="center" fontWeight={500}>
+            <Flex justifyContent="center" fontWeight={900}>
                 <Box color="text.dark">Dark Text</Box>
                 <Box mx={2} color="text.main">
                     Main Text
@@ -24,9 +24,9 @@ export const colors = () => {
                 p={3}
                 gridTemplateColumns={[
                     "125px 125px",
-                    "repeat(4, 125px)",
-                    "repeat(4, 125px)",
-                    "repeat(8, 110px)"
+                    "repeat(5, 125px)",
+                    "repeat(5, 125px)",
+                    "repeat(5, 110px)"
                 ]}
                 gridAutoRows={[125, 125, 125, 110]}
                 justifyContent="center"
@@ -34,9 +34,8 @@ export const colors = () => {
             >
                 {colorTypes.map(color => (
                     <React.Fragment>
-                        {colorScales.map(scale => (
+                        {colorScales(color).map(scale => (
                             <Flex
-                                bg={`${color}.${scale}`}
                                 p={3}
                                 justifyContent="center"
                                 alignItems="center"
@@ -45,21 +44,13 @@ export const colors = () => {
                                 fontSize={"base"}
                                 boxShadow={3}
                                 textAlign="center"
-                                color={
-                                    color === "text"
-                                        ? "background.main"
-                                        : color === "background"
-                                        ? "text.main"
-                                        : `${color}.text`
-                                }
+                                {...scale}
                             >
-                                <h5>
+                                <h4>
                                     {color[0].toUpperCase() + color.slice(1)}
-                                </h5>
-                                <br />
-                                <em>
-                                    {scale[0].toUpperCase() + scale.slice(1)}
-                                </em>
+                                </h4>
+                                {/* <br /> */}
+                                {/* <em>{"scale"}</em> */}
                             </Flex>
                         ))}
                     </React.Fragment>

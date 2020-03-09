@@ -40,6 +40,7 @@ export const Autocomplete: React.FC<Autocomplete> = ({
     return (
         <Box
             maxHeight={inputHeight}
+            minWidth={0}
             {...{
                 ...wrapperProps
             }}

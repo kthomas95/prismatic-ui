@@ -5,69 +5,78 @@ import { PseudoBox, PseudoBoxProps } from "../PseudoBox";
 import { StyledComponent, CreateStyledComponentBase } from "@emotion/styled";
 import { motion } from "framer-motion";
 
+type ButtonVariant = "default" | "outline" | "ghost";
+
 interface ButtonProps {
     variantColor?: string;
-    variant?: "default" | "outline";
+    variant?: ButtonVariant;
 }
 
-const StyleeButton = (colors: Color, variant: ButtonProps["variant"]): {} =>
-    variant === "default"
-        ? {
-              "&:active": {
-                  backgroundColor: colors.verylight,
-                  borderColor: colors.verylight
-              }
-          }
-        : {
-              borderColor: colors.light,
-              color: colors.dark,
-              backgroundColor: "transparent",
-              "&:hover": {
-                  backgroundColor: colors.light,
-                  color: colors.text
-              }
-          };
+const SolidButton = color => ({
+    regularStyles: {
+        color: color === "background" ? "text.main" : `${color}.text`,
+        bg: `${color}.main`,
+        borderColor: `${color}.main`,
+        boxShadow: 0
+    },
+    hoverStyles: {
+        bg: `${color}.light`,
+        color: `${color}.text`,
+        borderColor: `${color}.light`,
+        boxShadow: 1
+    },
+    activeStyles: {
+        bg: `${color}.verylight`,
+        borderColor: `${color}.verylight`,
+        boxShadow: 2
+    }
+});
 
-// export const Button = styled(Box)<ButtonProps>(
-//     ({ theme, variantColor = "primary", variant = "default" }) =>
-//         StyleButton(theme.colors[variantColor], variant),
-//     props => ({
-//         "&:active": {
-//             boxShadow: props.theme.shadows[3]
-//         }
-//     })
-// );
+const OutlineButton = color => ({
+    regularStyles: {
+        borderColor: `${color}.main`,
+        color: `${color}.main`,
+        boxShadow: 0,
+        bg: "transparent"
+    },
+    hoverStyles: {
+        bg: `${color}.lightalpha`,
+        boxShadow: 1
+        // color: `text.dark`
+    },
+    activeStyles: {
+        boxShadow: 2,
+        bg: `${color}.darkalpha`
+    }
+});
 
-const StyleButton = (color, variant) =>
-    variant === "default"
-        ? {
-              regularStyles: {
-                  color: color === "background" ? "text.main" : `${color}.text`,
-                  bg: `${color}.main`,
-                  borderColor: `${color}.main`
-              },
-              hoverStyles: {
-                  bg: `${color}.light`,
-                  borderColor: `${color}.light`
-              },
-              activeStyles: {
-                  bg: `${color}.verylight`,
-                  borderColor: `${color}.verylight`,
-                  boxShadow: 2
-              }
-          }
-        : {
-              regularStyles: {
-                  borderColor: `${color}.main`,
-                  color: `${color}.main`,
-                  bg: "transparent"
-              },
-              hoverStyles: {
-                  bg: `${color}.main`,
-                  color: `${color}.text`
-              },
-              activeStyles: { boxShadow: 2 }
-          };
+const GhostButton = color => ({
+    regularStyles: {
+        borderColor: "transparent",
+        bg: "transparent",
+        color: `${color}.main`
+    },
+    hoverStyles: {
+        // color: `${color}.text`,
+        bg: `${color}.lightalpha`,
+        color: "text.main"
+        // boxShadow: 0
+    },
+    activeStyles: {
+        bg: `${color}.darkalpha`
+        // boxShadow: 1
+    }
+});
+
+const StyleButton = (color, variant: ButtonVariant) => {
+    const styles = {
+        default: SolidButton,
+        outline: OutlineButton,
+        ghost: GhostButton
+    };
+
+    return styles[variant](color);
+};
 
 // export const Button: StyledComponent<
 //     ButtonProps,
@@ -137,13 +146,12 @@ export const MotionButton = motion.custom(Button);
 Button.defaultProps = {
     as: "button",
     p: 2,
-    fontSize: "sm",
+    fontSize: "xs",
     fontFamily: "inherit",
     display: "inline-flex",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 4,
     border: "solid 1px",
-    boxShadow: 1,
     fontWeight: 700
 };

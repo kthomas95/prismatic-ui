@@ -11,9 +11,9 @@ export const Message: React.FC<BoxProps & MessageProps> = ({
 }) => (
     <Box
         {...{
-            color: `${variantColor}.text`,
-            bg: `${variantColor}.light`,
-            borderColor: `${variantColor}.dark`,
+            color: `${variantColor}.dark`,
+            bg: `${variantColor}.verylight`,
+            borderColor: `${variantColor}.main`,
             ...props
         }}
     />
@@ -23,8 +23,8 @@ Message.defaultProps = {
     p: 3,
     lineHeight: 1.25,
     boxShadow: 2,
-    borderLeftWidth: "4px",
+    borderLeftWidth: "3px",
     borderLeftStyle: "solid",
-    borderTopRightRadius: 4,
-    borderBottomRightRadius: 4
+    borderTopRightRadius: 6,
+    borderBottomRightRadius: 6
 };

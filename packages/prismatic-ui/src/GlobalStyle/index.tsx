@@ -5,7 +5,7 @@ export const GlobalStyle = () => (
     <Global
         styles={theme => ({
             "h1, h2, h3, h4, h5, h6, hr": {
-                margin: "0 0 .33em 0"
+                margin: ".5em 0"
                 // marginBottom: ".5em"
             },
             "*": {
@@ -14,10 +14,14 @@ export const GlobalStyle = () => (
             body: {
                 margin: 0,
                 color: theme.colors.text.main,
-                backgroundColor: theme.colors.background.main
+                backgroundColor: theme.colors.background.dark
             },
             hr: {
                 color: theme.colors.alpha
+            },
+            button: {
+                fontFamily: "inherit",
+                color: "inherit"
             }
         })}
     />

@@ -7,7 +7,7 @@ import { Theme, SiteThemes } from ".";
 // });
 
 export const ThemeContext = createContext({
-    theme: "day",
+    theme: "night",
     toggleTheme: () => {}
 });
 
@@ -26,9 +26,15 @@ export const PrismaticApp: React.FC<PrismaticApp> = ({
     themes,
     initial
 }) => {
-    const [theme, setTheme] = useState(initial);
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme === null) {
+        localStorage.setItem("theme", initial);
+    }
+    const [theme, setTheme] = useState(storedTheme ? storedTheme : initial);
     const toggleTheme = () => {
-        setTheme(theme === "day" ? "night" : "day");
+        const newTheme = theme === "day" ? "night" : "day";
+        localStorage.setItem("theme", newTheme);
+        setTheme(newTheme);
     };
     return (
         <ThemeContext.Provider

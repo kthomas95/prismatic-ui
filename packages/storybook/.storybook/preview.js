@@ -9,8 +9,8 @@ import {
     ThemeContext,
     IconButton,
     GlobalStyle
-} from "prismatic-ui/dist";
-import { FiSun, FiMoon } from "../../prismatic-ui/node_modules/react-icons/fi";
+} from "prismatic-ui";
+import { FiSun, FiMoon } from "react-icons/fi";
 import { addParameters } from "@storybook/react";
 import { pkmnColors } from "./pkmn-colors";
 

@@ -22,6 +22,13 @@ import { Drawer } from "./Drawer";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "emotion-theming";
 import { Tabs } from "./Tabs";
+import {useState} from "react";
+
+export const kyle = "kyle";
+export const useKyle = () => {
+    const [name, setName] = useState("kylee");
+    return [name, setName];
+};
 
 export {
     AnimatedValue,

@@ -12,9 +12,10 @@
     "@types/react-dom": "^16.9.0",
     "bootstrap-icons": "^1.0.0-alpha2",
     "framer-motion": "^1.8.4",
+    "prismatic-ui": "file:../prismatic-ui",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-icons": "^3.9.0",
+    "react-icons": "^3.10.0",
     "react-scripts": "3.3.0",
     "react-spring": "^8.0.27",
     "typescript": "~3.7.2"

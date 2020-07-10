@@ -28,7 +28,11 @@ const SolidButton = color => ({
     activeStyles: {
         bg: `${color}.verylight`,
         borderColor: `${color}.verylight`,
-        boxShadow: 2
+        boxShadow: 2,
+        outline: "none"
+    },
+    focusStyles: {
+        outline: "none"
     }
 });
 
@@ -75,7 +79,7 @@ const StyleButton = (color, variant: ButtonVariant) => {
         ghost: GhostButton
     };
 
-    return styles[variant](color);
+    return (styles[variant] ?? (() => ({})))(color);
 };
 
 // export const Button: StyledComponent<
@@ -83,14 +87,14 @@ const StyleButton = (color, variant: ButtonVariant) => {
 //     ButtonProps & PseudoBoxProps & BoxProps,
 //     Theme
 // > = ({
-export const Button: React.FC<BoxProps &
-    ButtonProps &
-    PseudoBoxProps> = forwardRef(
+export const Button: React.FC<
+    ButtonProps & BoxProps & PseudoBoxProps> = forwardRef(
     (
         {
             _css,
             _hover,
             _active,
+            _focus,
             variantColor = "primary",
             variant = "default",
             leftIcon,
@@ -100,7 +104,7 @@ export const Button: React.FC<BoxProps &
         },
         ref
     ) => {
-        const { regularStyles, hoverStyles, activeStyles } = StyleButton(
+        const { regularStyles, hoverStyles, activeStyles, focusStyles } = StyleButton(
             variantColor,
             variant
         );
@@ -111,7 +115,8 @@ export const Button: React.FC<BoxProps &
                     ...props,
                     _css: { ...regularStyles, ..._css },
                     _hover: { ...hoverStyles, ..._hover },
-                    _active: { ...activeStyles, ..._active }
+                    _active: { ...activeStyles, ..._active },
+                    _focus: {...focusStyles, ..._focus}
                 }}
             >
                 {leftIcon && <Box as={leftIcon} mr={2} />}

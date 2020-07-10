@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "develop": "concurrently \"cd packages/prismatic-ui && npm run start\" \"cd packages/storybook && yarn storybook\""
+        "develop": "concurrently \"cd packages/prismatic-ui && npm run start\" \"cd packages/storybook && npm run storybook\""
     },
     "repository": {
         "type": "git",
@@ -15,5 +15,8 @@
     "bugs": {
         "url": "https://github.com/kthomas95/prismatic-ui/issues"
     },
-    "homepage": "https://github.com/kthomas95/prismatic-ui#readme"
+    "homepage": "https://github.com/kthomas95/prismatic-ui#readme",
+    "devDependencies": {
+        "lerna": "^3.22.1"
+    }
 }

@@ -5,7 +5,7 @@ import {
     Grid,
     Autocomplete,
     AnimatedList
-} from "prismatic-ui/dist";
+} from "prismatic-ui/";
 import cardData from "../card_data.json";
 import { AnimatedCard } from "./2-Inputs.stories";
 export const autocomplete = () => {

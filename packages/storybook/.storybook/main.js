@@ -1,24 +1,9 @@
-const path = require("path");
-
 module.exports = {
-    stories: ["../src/stories/**/*.stories.(ts|tsx|js|jsx)"],
-    addons: [
-        "@storybook/addon-actions",
-        "@storybook/addon-links",
-        "@storybook/addon-toolbars",
-        {
-            name: "@storybook/preset-create-react-app",
-            options: {
-                tsDocgenLoaderOptions: {
-                    tsconfigPath: path.resolve(__dirname, "../tsconfig.json")
-                }
-            }
-        },
-        {
-            name: "@storybook/addon-docs",
-            options: {
-                configureJSX: true
-            }
-        },
-    ]
+  stories: ['../src/**/*.stories.@(ts|tsx|js|jsx)'],
+  addons: [
+    '@storybook/preset-create-react-app',
+    '@storybook/addon-actions',
+    '@storybook/addon-links',
+    '@storybook/addon-toolbars'
+  ],
 };

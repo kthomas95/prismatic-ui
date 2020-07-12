@@ -6,7 +6,7 @@ import {
     Checkbox,
     Message,
     PseudoBox
-} from "prismatic-ui/dist";
+} from "prismatic-ui";
 
 export const ControlledCheckbox = ({ ...props }) => {
     const [check1, setCheck1] = useState(true);

@@ -1,24 +1,21 @@
 {
-  "name": "storybook",
+  "name": "sb",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "bootstrap-icons": "^1.0.0-alpha2",
-    "framer-motion": "^1.8.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^12.12.48",
+    "@types/react": "^16.9.41",
+    "@types/react-dom": "^16.9.8",
     "prismatic-ui": "file:../prismatic-ui",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
-    "react-scripts": "3.3.0",
-    "react-spring": "^8.0.27",
-    "typescript": "~3.7.2"
+    "react-scripts": "3.4.1",
+    "typescript": "^3.7.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,13 +41,11 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^5.3.19",
-    "@storybook/addon-docs": "^5.3.19",
-    "@storybook/addon-links": "^5.3.19",
-    "@storybook/addon-toolbars": "^6.0.0-alpha.27",
-    "@storybook/addons": "^6.0.0-rc.1",
-    "@storybook/preset-create-react-app": "^3.1.3",
-    "@storybook/react": "^6.0.0-rc.1",
-    "@storybook/theming": "^5.3.19"
+    "@storybook/addon-actions": "^6.0.0-rc.3",
+    "@storybook/addon-links": "^6.0.0-rc.3",
+    "@storybook/addon-toolbars": "^6.0.0-rc.3",
+    "@storybook/addons": "^6.0.0-rc.3",
+    "@storybook/preset-create-react-app": "^3.1.4",
+    "@storybook/react": "^6.0.0-rc.3"
   }
 }

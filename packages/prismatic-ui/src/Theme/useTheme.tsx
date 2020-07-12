@@ -8,8 +8,8 @@ import { Theme, SiteThemes } from ".";
 
 export const ThemeContext = createContext({
     theme: "night",
-    toggleTheme: () => {}
-    
+    toggleTheme: () => { }
+
 });
 
 interface PrismaticApp {
@@ -19,9 +19,9 @@ interface PrismaticApp {
 
 const WithTheme = ({ themes, children }) => {
     const { theme } = useContext(ThemeContext);
-    return  <ThemeProvider theme={themes[theme]}>
+    return <ThemeProvider theme={themes[theme]}>
         {children}
-        </ThemeProvider>;
+    </ThemeProvider>;
 };
 
 export const PrismaticApp: React.FC<PrismaticApp> = ({
@@ -30,12 +30,12 @@ export const PrismaticApp: React.FC<PrismaticApp> = ({
     initial
 }) => {
     const storedTheme = localStorage.getItem("theme");
-    console.log("test")
+
     if (!(storedTheme in themes)) {
         localStorage.setItem("theme", initial);
-        console.log("setting theme", initial)
     }
     const [theme, setTheme] = useState(storedTheme ? storedTheme : initial);
+
     const toggleTheme = () => {
         const newTheme = theme === "day" ? "night" : "day";
         localStorage.setItem("theme", newTheme);
@@ -44,7 +44,7 @@ export const PrismaticApp: React.FC<PrismaticApp> = ({
     return (
         <ThemeContext.Provider
             value={{
-                theme,
+                theme: initial,
                 toggleTheme
             }}
         >

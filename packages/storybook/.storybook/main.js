@@ -5,6 +5,7 @@ module.exports = {
     addons: [
         "@storybook/addon-actions",
         "@storybook/addon-links",
+        "@storybook/addon-toolbars",
         {
             name: "@storybook/preset-create-react-app",
             options: {
@@ -18,6 +19,6 @@ module.exports = {
             options: {
                 configureJSX: true
             }
-        }
+        },
     ]
 };

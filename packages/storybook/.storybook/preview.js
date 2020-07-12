@@ -38,7 +38,8 @@ const ToggleButton = () => {
     );
 };
 
-const ThemeDecorator = StoryFn => {
+const ThemeDecorator = (StoryFn, globalArgs) => {
+    console.log("global args", globalArgs);
     return (
         <PrismaticApp
             themes={{
@@ -78,4 +79,25 @@ html { font-family: 'Inter', sans-serif; }
     );
 };
 
-addDecorator(ThemeDecorator);
+// addDecorator(ThemeDecorator);
+
+// export const globalArgTypes = {
+//   theme: {
+//     name: 'Theme',
+//     description: 'Global theme for components',
+//     defaultValue: 'light',
+//     toolbar: { icon: 'box', options: ['light','dark', 'medium'] },
+//   }
+// }
+
+export const globalTypes = {
+    theme: {
+        name: "Theme",
+        description: "test",
+        defaultValue: "light",
+        toolbar: {
+            icon: 'circlehollow',
+            items: ["light", "dark"]
+        }
+    }
+}

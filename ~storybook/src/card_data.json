@@ -1,0 +1,882 @@
+[
+    {
+        "node": {
+            "id": "smp-SM01",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Fire",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Grass"],
+            "text": null,
+            "supertype": "Pokémon",
+            "subtype": "Basic",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless"],
+            "resistances": null,
+            "rarity": "",
+            "number": "SM01",
+            "nationalPokedexNumber": 722,
+            "name": "Rowlet",
+            "evolvesFrom": null,
+            "convertedRetreatCost": 1,
+            "attacks": [
+                {
+                    "text": "Flip 3 coins. This attack does 10 damage for each heads.",
+                    "name": "Fury Attack",
+                    "cost": ["Grass"],
+                    "convertedEnergyCost": 1
+                }
+            ],
+            "ancientTrait": null,
+            "ability": null
+        }
+    },
+    {
+        "node": {
+            "id": "smp-SM02",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Water",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Fire"],
+            "text": null,
+            "supertype": "Pokémon",
+            "subtype": "Basic",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless"],
+            "resistances": null,
+            "rarity": "",
+            "number": "SM02",
+            "nationalPokedexNumber": 725,
+            "name": "Litten",
+            "evolvesFrom": null,
+            "convertedRetreatCost": 1,
+            "attacks": [
+                {
+                    "text": "",
+                    "name": "Combustion",
+                    "cost": ["Fire", "Colorless"],
+                    "convertedEnergyCost": 2
+                }
+            ],
+            "ancientTrait": null,
+            "ability": null
+        }
+    },
+    {
+        "node": {
+            "id": "smp-SM03",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Grass",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Water"],
+            "text": null,
+            "supertype": "Pokémon",
+            "subtype": "Basic",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless"],
+            "resistances": null,
+            "rarity": "",
+            "number": "SM03",
+            "nationalPokedexNumber": 728,
+            "name": "Popplio",
+            "evolvesFrom": null,
+            "convertedRetreatCost": 1,
+            "attacks": [
+                {
+                    "text": "Your opponent's Active Pokémon is now Asleep.",
+                    "name": "Sing",
+                    "cost": ["Water"],
+                    "convertedEnergyCost": 1
+                }
+            ],
+            "ancientTrait": null,
+            "ability": null
+        }
+    },
+    {
+        "node": {
+            "id": "smp-SM04",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Fighting",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Lightning"],
+            "text": null,
+            "supertype": "Pokémon",
+            "subtype": "Basic",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless"],
+            "resistances": [
+                {
+                    "value": "-20",
+                    "type": "Metal"
+                }
+            ],
+            "rarity": "",
+            "number": "SM04",
+            "nationalPokedexNumber": 25,
+            "name": "Pikachu",
+            "evolvesFrom": null,
+            "convertedRetreatCost": 1,
+            "attacks": [
+                {
+                    "text": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.",
+                    "name": "Thunder Wave",
+                    "cost": ["Lightning"],
+                    "convertedEnergyCost": 1
+                },
+                {
+                    "text": "",
+                    "name": "Electro Ball",
+                    "cost": ["Lightning", "Colorless", "Colorless"],
+                    "convertedEnergyCost": 3
+                }
+            ],
+            "ancientTrait": null,
+            "ability": null
+        }
+    },
+    {
+        "node": {
+            "id": "smp-SM05",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Fighting",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Colorless"],
+            "text": [
+                "When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+            ],
+            "supertype": "Pokémon",
+            "subtype": "GX",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless", "Colorless", "Colorless", "Colorless"],
+            "resistances": null,
+            "rarity": "",
+            "number": "SM05",
+            "nationalPokedexNumber": 143,
+            "name": "Snorlax-GX",
+            "evolvesFrom": null,
+            "convertedRetreatCost": 4,
+            "attacks": [
+                {
+                    "text": "This Pokémon is now Asleep.",
+                    "name": "Collapse",
+                    "cost": ["Colorless", "Colorless", "Colorless"],
+                    "convertedEnergyCost": 3
+                },
+                {
+                    "text": "This attack can be used if this Pokémon is Asleep. If it is not Asleep, this attack does nothing.",
+                    "name": "Thunderous Snore",
+                    "cost": [
+                        "Colorless",
+                        "Colorless",
+                        "Colorless",
+                        "Colorless",
+                        "Colorless"
+                    ],
+                    "convertedEnergyCost": 5
+                },
+                {
+                    "text": "This Pokémon is now Asleep. (You can't use more than 1 GX attack in a game.)",
+                    "name": "Pulverizing Pancake-GX",
+                    "cost": [
+                        "Colorless",
+                        "Colorless",
+                        "Colorless",
+                        "Colorless",
+                        "Colorless"
+                    ],
+                    "convertedEnergyCost": 5
+                }
+            ],
+            "ancientTrait": null,
+            "ability": null
+        }
+    },
+    {
+        "node": {
+            "id": "smp-SM06",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Grass",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Fighting"],
+            "text": null,
+            "supertype": "Pokémon",
+            "subtype": "Basic",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless"],
+            "resistances": null,
+            "rarity": "",
+            "number": "SM06",
+            "nationalPokedexNumber": 744,
+            "name": "Rockruff",
+            "evolvesFrom": null,
+            "convertedRetreatCost": 1,
+            "attacks": [
+                {
+                    "text": "",
+                    "name": "Tackle",
+                    "cost": ["Colorless"],
+                    "convertedEnergyCost": 1
+                },
+                {
+                    "text": "",
+                    "name": "Rock Throw",
+                    "cost": ["Fighting", "Colorless"],
+                    "convertedEnergyCost": 2
+                }
+            ],
+            "ancientTrait": null,
+            "ability": null
+        }
+    },
+    {
+        "node": {
+            "id": "smp-SM07",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Lightning",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Colorless"],
+            "text": null,
+            "supertype": "Pokémon",
+            "subtype": "Basic",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless"],
+            "resistances": [
+                {
+                    "value": "-20",
+                    "type": "Fighting"
+                }
+            ],
+            "rarity": "",
+            "number": "SM07",
+            "nationalPokedexNumber": 731,
+            "name": "Pikipek",
+            "evolvesFrom": null,
+            "convertedRetreatCost": 1,
+            "attacks": [
+                {
+                    "text": "This Pokémon does 20 damage to itself.",
+                    "name": "Nosedive",
+                    "cost": ["Colorless", "Colorless"],
+                    "convertedEnergyCost": 2
+                }
+            ],
+            "ancientTrait": null,
+            "ability": null
+        }
+    },
+    {
+        "node": {
+            "id": "smp-SM08",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Water",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Fire"],
+            "text": null,
+            "supertype": "Pokémon",
+            "subtype": "Basic",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless"],
+            "resistances": null,
+            "rarity": "",
+            "number": "SM08",
+            "nationalPokedexNumber": 725,
+            "name": "Litten",
+            "evolvesFrom": null,
+            "convertedRetreatCost": 1,
+            "attacks": [
+                {
+                    "text": "Draw a card.",
+                    "name": "Collect",
+                    "cost": ["Colorless"],
+                    "convertedEnergyCost": 1
+                },
+                {
+                    "text": "",
+                    "name": "Scratch",
+                    "cost": ["Fire", "Colorless"],
+                    "convertedEnergyCost": 2
+                }
+            ],
+            "ancientTrait": null,
+            "ability": null
+        }
+    },
+    {
+        "node": {
+            "id": "smp-SM09",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Fighting",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Lightning"],
+            "text": null,
+            "supertype": "Pokémon",
+            "subtype": "Basic",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless"],
+            "resistances": [
+                {
+                    "value": "-20",
+                    "type": "Metal"
+                }
+            ],
+            "rarity": "",
+            "number": "SM09",
+            "nationalPokedexNumber": 777,
+            "name": "Togedemaru",
+            "evolvesFrom": null,
+            "convertedRetreatCost": 1,
+            "attacks": [
+                {
+                    "text": "Flip a coin. If heads, prevent all damage done to this Pokémon by attacks during your opponent's next turn.",
+                    "name": "Defense Curl",
+                    "cost": ["Colorless"],
+                    "convertedEnergyCost": 1
+                },
+                {
+                    "text": "Discard all Lightning Energy from this Pokémon. This attack does 30 damage for each card you discarded in this way.",
+                    "name": "Discharge",
+                    "cost": ["Lightning"],
+                    "convertedEnergyCost": 1
+                }
+            ],
+            "ancientTrait": null,
+            "ability": null
+        }
+    },
+    {
+        "node": {
+            "id": "smp-SM10",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Fire",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Grass"],
+            "text": null,
+            "supertype": "Pokémon",
+            "subtype": "Stage 1",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless", "Colorless"],
+            "resistances": null,
+            "rarity": "",
+            "number": "SM10",
+            "nationalPokedexNumber": 756,
+            "name": "Shiinotic",
+            "evolvesFrom": "Morelull",
+            "convertedRetreatCost": 2,
+            "attacks": [
+                {
+                    "text": "Your opponent's Active Pokémon is now Asleep.",
+                    "name": "Flickering Spores",
+                    "cost": ["Grass", "Colorless"],
+                    "convertedEnergyCost": 2
+                }
+            ],
+            "ancientTrait": null,
+            "ability": {
+                "type": "Ability",
+                "text": "Once during your turn (before your attack), you may search your deck for a Grass Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.",
+                "name": "Illuminate"
+            }
+        }
+    },
+    {
+        "node": {
+            "id": "smp-SM11",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Grass",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Water"],
+            "text": null,
+            "supertype": "Pokémon",
+            "subtype": "Basic",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless", "Colorless"],
+            "resistances": null,
+            "rarity": "",
+            "number": "SM11",
+            "nationalPokedexNumber": 779,
+            "name": "Bruxish",
+            "evolvesFrom": null,
+            "convertedRetreatCost": 2,
+            "attacks": [
+                {
+                    "text": "Search your deck for up to 3 basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck.",
+                    "name": "Vivid Charge",
+                    "cost": ["Colorless"],
+                    "convertedEnergyCost": 1
+                },
+                {
+                    "text": "This attack's damage isn't affected by any effects on your opponent's Active Pokémon.",
+                    "name": "Psychic Fangs",
+                    "cost": ["Water", "Water", "Colorless"],
+                    "convertedEnergyCost": 3
+                }
+            ],
+            "ancientTrait": null,
+            "ability": null
+        }
+    },
+    {
+        "node": {
+            "id": "smp-SM12",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Psychic",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Fighting"],
+            "text": null,
+            "supertype": "Pokémon",
+            "subtype": "Basic",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless"],
+            "resistances": null,
+            "rarity": "",
+            "number": "SM12",
+            "nationalPokedexNumber": 766,
+            "name": "Passimian",
+            "evolvesFrom": null,
+            "convertedRetreatCost": 1,
+            "attacks": [
+                {
+                    "text": "This attack does 30 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+                    "name": "Fling",
+                    "cost": ["Fighting"],
+                    "convertedEnergyCost": 1
+                },
+                {
+                    "text": "This attack does 30 more damage for each of your Benched Passimian.",
+                    "name": "Team Play",
+                    "cost": ["Colorless", "Colorless"],
+                    "convertedEnergyCost": 2
+                }
+            ],
+            "ancientTrait": null,
+            "ability": null
+        }
+    },
+    {
+        "node": {
+            "id": "smp-SM13",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Fighting",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Colorless"],
+            "text": null,
+            "supertype": "Pokémon",
+            "subtype": "Basic",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless", "Colorless"],
+            "resistances": null,
+            "rarity": "",
+            "number": "SM13",
+            "nationalPokedexNumber": 765,
+            "name": "Oranguru",
+            "evolvesFrom": null,
+            "convertedRetreatCost": 2,
+            "attacks": [
+                {
+                    "text": "This attack does 20 more damage times the amount of Energy attached to your opponent's Active Pokémon.",
+                    "name": "Psychic",
+                    "cost": ["Colorless", "Colorless", "Colorless"],
+                    "convertedEnergyCost": 3
+                }
+            ],
+            "ancientTrait": null,
+            "ability": {
+                "type": "Ability",
+                "text": "Once during your turn (before your attack), you may draw cards until you have 3 cards in your hand.",
+                "name": "Instruct"
+            }
+        }
+    },
+    {
+        "node": {
+            "id": "smp-SM14",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Grass",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Fighting"],
+            "text": [
+                "When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+            ],
+            "supertype": "Pokémon",
+            "subtype": "GX",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless"],
+            "resistances": null,
+            "rarity": "",
+            "number": "SM14",
+            "nationalPokedexNumber": 745,
+            "name": "Lycanroc-GX",
+            "evolvesFrom": "Rockruff",
+            "convertedRetreatCost": 1,
+            "attacks": [
+                {
+                    "text": "Discard an Energy from your opponent's Active Pokémon.",
+                    "name": "Crunch",
+                    "cost": ["Fighting", "Colorless"],
+                    "convertedEnergyCost": 2
+                },
+                {
+                    "text": "",
+                    "name": "Accelerock",
+                    "cost": ["Fighting", "Fighting", "Colorless"],
+                    "convertedEnergyCost": 3
+                },
+                {
+                    "text": "Discard 2 Energy from this Pokémon. (You can't use more than 1 GX attack in a game.)",
+                    "name": "Lycanfang-GX",
+                    "cost": ["Fighting", "Fighting", "Colorless"],
+                    "convertedEnergyCost": 3
+                }
+            ],
+            "ancientTrait": null,
+            "ability": null
+        }
+    },
+    {
+        "node": {
+            "id": "smp-SM15",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Grass",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Fighting"],
+            "text": null,
+            "supertype": "Pokémon",
+            "subtype": "Basic",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless", "Colorless", "Colorless"],
+            "resistances": null,
+            "rarity": "",
+            "number": "SM15",
+            "nationalPokedexNumber": 718,
+            "name": "Zygarde",
+            "evolvesFrom": null,
+            "convertedRetreatCost": 3,
+            "attacks": [
+                {
+                    "text": "",
+                    "name": "Pulse Blast",
+                    "cost": ["Fighting", "Colorless", "Colorless"],
+                    "convertedEnergyCost": 3
+                },
+                {
+                    "text": "",
+                    "name": "Land's Wrath",
+                    "cost": ["Fighting", "Fighting", "Fighting", "Colorless"],
+                    "convertedEnergyCost": 4
+                }
+            ],
+            "ancientTrait": null,
+            "ability": null
+        }
+    },
+    {
+        "node": {
+            "id": "smp-SM16",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Fire",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Metal"],
+            "text": [
+                "When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+            ],
+            "supertype": "Pokémon",
+            "subtype": "GX",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless", "Colorless", "Colorless"],
+            "resistances": [
+                {
+                    "value": "-20",
+                    "type": "Psychic"
+                }
+            ],
+            "rarity": "",
+            "number": "SM16",
+            "nationalPokedexNumber": 791,
+            "name": "Solgaleo-GX",
+            "evolvesFrom": "Cosmoem",
+            "convertedRetreatCost": 3,
+            "attacks": [
+                {
+                    "text": "Discard all Energy from this Pokémon.",
+                    "name": "Sunsteel Strike",
+                    "cost": ["Metal", "Metal", "Colorless"],
+                    "convertedEnergyCost": 3
+                },
+                {
+                    "text": "Search your deck for up to 5 Energy cards and attach them to your Pokémon in any way you like. Then, shuffle your deck. (You can't use more than 1 GX attack in a game.)",
+                    "name": "Sol Burst-GX",
+                    "cost": ["Metal"],
+                    "convertedEnergyCost": 1
+                }
+            ],
+            "ancientTrait": null,
+            "ability": {
+                "type": "Ability",
+                "text": "Once during your turn (before your attack), you may switch your Active Pokémon with 1 of your Benched Pokémon.",
+                "name": "Ultra Road"
+            }
+        }
+    },
+    {
+        "node": {
+            "id": "smp-SM17",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Darkness",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Psychic"],
+            "text": [
+                "When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+            ],
+            "supertype": "Pokémon",
+            "subtype": "GX",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless", "Colorless"],
+            "resistances": [
+                {
+                    "value": "-20",
+                    "type": "Fighting"
+                }
+            ],
+            "rarity": "",
+            "number": "SM17",
+            "nationalPokedexNumber": 792,
+            "name": "Lunala-GX",
+            "evolvesFrom": "Cosmoem",
+            "convertedRetreatCost": 2,
+            "attacks": [
+                {
+                    "text": "The Defending Pokémon can't be healed during your opponent's next turn.",
+                    "name": "Moongeist Beam",
+                    "cost": ["Psychic", "Psychic", "Psychic", "Psychic"],
+                    "convertedEnergyCost": 4
+                },
+                {
+                    "text": "Knock Out 1 of your opponent's Basic Pokémon that isn't a Pokémon-GX. (You can't use more than 1 GX attack in a game.)",
+                    "name": "Lunar Fall-GX",
+                    "cost": ["Psychic", "Psychic", "Psychic"],
+                    "convertedEnergyCost": 3
+                }
+            ],
+            "ancientTrait": null,
+            "ability": {
+                "type": "Ability",
+                "text": "As often as you like during your turn (before your attack), you may move a Psychic Energy from 1 of your Pokémon to another of your Pokémon.",
+                "name": "Psychic Transfer"
+            }
+        }
+    },
+    {
+        "node": {
+            "id": "smp-SM18",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Metal",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Water"],
+            "text": null,
+            "supertype": "Pokémon",
+            "subtype": "Stage 1",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless", "Colorless"],
+            "resistances": null,
+            "rarity": "",
+            "number": "SM18",
+            "nationalPokedexNumber": 28,
+            "name": "Alolan Sandslash",
+            "evolvesFrom": "Alolan Sandshrew",
+            "convertedRetreatCost": 2,
+            "attacks": [
+                {
+                    "text": "Switch this Pokémon with 1 of your Benched Pokémon.",
+                    "name": "Smash Turn",
+                    "cost": ["Water", "Colorless", "Colorless"],
+                    "convertedEnergyCost": 3
+                }
+            ],
+            "ancientTrait": null,
+            "ability": {
+                "type": "Ability",
+                "text": "Once during your turn (before your attack), you may draw a card.",
+                "name": "Slush Rush"
+            }
+        }
+    },
+    {
+        "node": {
+            "id": "smp-SM19",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Darkness",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Psychic"],
+            "text": null,
+            "supertype": "Pokémon",
+            "subtype": "Basic",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless"],
+            "resistances": [
+                {
+                    "value": "-20",
+                    "type": "Fighting"
+                }
+            ],
+            "rarity": "",
+            "number": "SM19",
+            "nationalPokedexNumber": 741,
+            "name": "Oricorio",
+            "evolvesFrom": null,
+            "convertedRetreatCost": 1,
+            "attacks": [
+                {
+                    "text": "For each Pokémon in your opponent's discard pile, put 1 damage counter on your opponent's Pokémon in any way you like.",
+                    "name": "Supernatural Dance",
+                    "cost": ["Colorless"],
+                    "convertedEnergyCost": 1
+                },
+                {
+                    "text": "If there is no Stadium card in play, this attack does nothing.",
+                    "name": "Revelation Dance",
+                    "cost": ["Colorless"],
+                    "convertedEnergyCost": 1
+                }
+            ],
+            "ancientTrait": null,
+            "ability": null
+        }
+    },
+    {
+        "node": {
+            "id": "smp-SM20",
+            "setCode": "smp",
+            "set": "SM Black Star Promos",
+            "weaknesses": [
+                {
+                    "type": "Grass",
+                    "value": "×2"
+                }
+            ],
+            "types": ["Fighting"],
+            "text": null,
+            "supertype": "Pokémon",
+            "subtype": "Stage 1",
+            "series": "Sun & Moon",
+            "retreatCost": ["Colorless", "Colorless", "Colorless", "Colorless"],
+            "resistances": null,
+            "rarity": "",
+            "number": "SM20",
+            "nationalPokedexNumber": 750,
+            "name": "Mudsdale",
+            "evolvesFrom": "Mudbray",
+            "convertedRetreatCost": 4,
+            "attacks": [
+                {
+                    "text": "If this Pokémon has a Pokémon Tool card attached to it, this attack does 60 more damage.",
+                    "name": "Enhanced Stomp",
+                    "cost": ["Fighting", "Fighting", "Colorless"],
+                    "convertedEnergyCost": 3
+                },
+                {
+                    "text": "This Pokémon does 40 damage to itself.",
+                    "name": "High Horsepower",
+                    "cost": ["Fighting", "Fighting", "Fighting", "Colorless"],
+                    "convertedEnergyCost": 4
+                }
+            ],
+            "ancientTrait": null,
+            "ability": null
+        }
+    }
+]

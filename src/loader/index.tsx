@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FiLoader } from "react-icons/fi";
 import { WidthProps, ResponsiveValue } from "styled-system";
-import { MotionBox, Box } from "../box";
+import { MotionBox, Box } from "../";
 
 interface LoaderProps {
     size?: ResponsiveValue<number | string>;

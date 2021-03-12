@@ -1,5 +1,7 @@
+import { CSSObject } from "@styled-system/css";
+import { ComponentProps } from "react";
+import styled, { ThemedStyledFunction } from "styled-components";
 import { Box, Flex } from "..";
-
 export default {
     title: "Layout",
 };
@@ -14,6 +16,7 @@ export const box = () => (
             boxShadow: "md",
             borderRadius: 2,
         }}
+        as="s"
     >
         <h2>Box</h2>
     </Box>

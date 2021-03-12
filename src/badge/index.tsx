@@ -20,6 +20,7 @@ const getButtonStyles = makeStyles((color) => ({
     },
     ghost: {
         bg: color === "text" ? "text.100" : `${color}.a100`,
+        color: `${color}.900`,
     },
 }));
 
@@ -31,7 +32,7 @@ const defaultProps = {
     p: 1,
     fontWeight: 700,
     boxShadow: "md",
-    fontSize: "xs",
+    fontSize: "2xs",
     borderRadius: 3,
     textTransform: "uppercase",
 } as CSSObject;

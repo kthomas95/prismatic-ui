@@ -13,7 +13,6 @@ export interface ButtonProps extends WithVariantColor {
 }
 export type Button<T> = PseudoBox<ButtonProps & T>;
 
-
 const getButtonStyles = makeStyles((color) => ({
     default: {
         color: `${color}.text` as const,
@@ -29,7 +28,7 @@ const getButtonStyles = makeStyles((color) => ({
         ":active": {
             bg: `${color}.100`,
             borderColor: `${color}.100`,
-            boxShadow: "lg",
+            boxShadow: "xl",
             outline: "none",
         },
 
@@ -75,8 +74,6 @@ const getButtonStyles = makeStyles((color) => ({
     },
 }));
 
-
-
 const defaultButtonProps: CSSObject = {
     p: 2,
     fontSize: "xs",
@@ -90,7 +87,7 @@ const defaultButtonProps: CSSObject = {
     fontWeight: 700,
 };
 
-export const Button = forwardRef<
+export const Button: Box<ButtonProps> = forwardRef<
     HTMLButtonElement,
     PropsWithChildren<WithCSS & ButtonProps>
 >(
@@ -116,9 +113,14 @@ export const Button = forwardRef<
             )}
             {...props}
         >
-            {leftIcon && <Box as={leftIcon} mr={2} />}
+            {leftIcon && <Box as={leftIcon} _css={{ mr: children && 2 }} />}
             {children}
-            {rightIcon && <Box as={rightIcon} ml={2} />}
+            {rightIcon && (
+                <Box
+                    as={rightIcon}
+                    _css={{ ml: (children || leftIcon) && 2 }}
+                />
+            )}
         </Box>
     )
 );

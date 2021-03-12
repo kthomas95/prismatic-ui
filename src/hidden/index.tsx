@@ -1,11 +1,13 @@
 import React from "react";
 import { ResponsiveValue } from "styled-system";
 import { AnimatePresence } from "framer-motion";
-import { StyledBoxProps, MotionBox } from "../box";
+import { MotionBox } from "../";
+import { CSSObject, CSSProperties } from "@styled-system/css";
+import { WithCSS } from "../box";
 
 const FullScreenProps = (
     offset: ResponsiveValue<number | string>
-): StyledBoxProps => ({
+): CSSObject => ({
     position: "fixed",
     top: offset,
     bottom: offset,
@@ -31,12 +33,16 @@ export const Hidden: MotionBox<HiddenProps> = ({
     visible,
     fullScreen,
     fullScreenOffset = "5vw",
+    _css,
     ...props
 }) => (
     <AnimatePresence>
         {visible && (
             <MotionBox
-                {...(fullScreen ? FullScreenProps(fullScreenOffset) : {})}
+                _css={{
+                    ...(fullScreen ? FullScreenProps(fullScreenOffset) : {}),
+                    ..._css,
+                }}
                 layout
                 {...props}
             />

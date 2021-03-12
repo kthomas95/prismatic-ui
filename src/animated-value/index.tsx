@@ -1,6 +1,6 @@
 import { AnimatePresence, MotionProps } from "framer-motion";
 import React from "react";
-import { MotionBox } from "../box";
+import { MotionBox } from "../";
 
 interface AnimatedValue {
     value: string | number;

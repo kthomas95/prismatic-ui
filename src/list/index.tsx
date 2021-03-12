@@ -1,32 +1,26 @@
 import React from "react";
-import { Box } from "../box";
+import { Box, WithCSS } from "../box";
 
-interface List {
-    listItemProps: object;
-    ListItem: React.FC<any>;
-    itemKey: string;
+interface ListProps<T extends object> extends WithCSS {
+    items: T[];
+    delegate: (item: T, index: number) => JSX.Element;
+    itemKey: (item: T, index: number) => string;
 }
 
 export const DefaultListItem = (props) => <Box {...props} />;
 
-export const List: Box<List> = ({
-    listItemProps,
-    ListItem = DefaultListItem,
+export const List = <T extends object>({
     itemKey,
+    delegate: Delegate,
+    items,
+    _css,
     ...props
-}) => {
-    let height = 0;
+}: ListProps<T>) => {
     return (
-        <Box
-            {...props}
-            // width={itemWidth + listPadding * 2}
-            // px={`${listPadding}px`}
-        ></Box>
+        <Box _css={_css} {...props}>
+            {items.map((item, index) => (
+                <Delegate key={itemKey(item, index)} {...item} />
+            ))}
+        </Box>
     );
-};
-
-List.defaultProps = {
-    as: "ol",
-    m: 0,
-    p: 0,
 };

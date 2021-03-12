@@ -5,7 +5,7 @@ import { PseudoBox, PseudoBoxProps } from "../pseudo-box";
 import { ResponsiveValue } from "styled-system";
 import { SystemCssProperties, SystemStyleObject } from "@styled-system/css";
 import { CSSObject } from "styled-components";
-import { StyledBoxProps, Box, MotionBox } from "../box";
+import { Box, MotionBox } from "../";
 
 interface AutocompleteProps {
     open: boolean;

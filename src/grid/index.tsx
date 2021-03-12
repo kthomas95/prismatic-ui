@@ -1,8 +1,6 @@
 import React from "react";
 import { Box } from "../box";
 
-export const Grid: Box = ({ ...props }) => <Box {...props} />;
-
-Grid.defaultProps = {
-    display: "grid",
-};
+export const Grid: Box = ({ _css, ...props }) => (
+    <Box _css={{ display: "grid", ..._css }} {...props} />
+);

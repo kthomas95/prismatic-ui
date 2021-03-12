@@ -8,9 +8,10 @@ import {
 import { FiShuffle } from "react-icons/fi";
 import { Button } from "../button";
 import { Theme } from "styled-system";
-import { StyledBoxProps, MotionBox, Box } from "../box";
+import { MotionBox, Box } from "../";
+import { WithCSS } from "../box";
 
-interface ListProps<T, O> extends StyledBoxProps {
+interface ListProps<T, O> extends WithCSS {
     items: T[];
     /** The component that will be rendered for each list item. */
     component: React.FC<T & O & { index: number }>;
@@ -31,7 +32,7 @@ const DefaultAnimateProps: MotionProps & AnimationProps = {
     layout: true,
 };
 
-const AnimatedListItem: MotionBox = (props) => (
+const AnimatedListItem: MotionBox = ({ ...props }) => (
     <MotionBox {...props} {...(DefaultAnimateProps as MotionProps)} />
 );
 

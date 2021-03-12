@@ -1,5 +1,5 @@
 import React from "react";
-import { MotionBox } from "../box";
+import { MotionBox } from "../";
 
 const DrawerStyles = {
     left: {},

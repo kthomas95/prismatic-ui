@@ -1,12 +1,5 @@
 import { CSSObject } from "styled-components";
 import { Theme as StyledSystemTheme, ObjectOrArray } from "styled-system";
-// export type Color = {
-//     main: string;
-//     light: string;
-//     dark: string;
-//     verylight: string;
-//     text: string;
-// };
 
 export const COLOR_TYPES = [
     "primary",
@@ -19,7 +12,6 @@ export const COLOR_TYPES = [
     "background",
 ] as const;
 
-// export type ColorType = "primary" | "secondary" | "error" | "success" | "warning" | "text" | "background";
 export type ColorVariant = typeof COLOR_TYPES[number];
 export type ColorScale = 100 | 300 | 500 | 700 | 900 | "text" | "a50" | "a100";
 export type ColorValue = `${ColorVariant}.${ColorScale}`;
@@ -32,7 +24,7 @@ export type StyleVariant = (props: WithVariantColor) => CSSObject;
 
 export interface Theme extends StyledSystemTheme {
     colors: Record<ColorVariant, Record<ColorScale, string>>;
-    shadows: Record<"sm" | "md" | "lg" | "xl" | "2xl", string>;
+    shadows: Record<"inset" | "sm" | "md" | "lg" | "xl" | "2xl", string>;
 }
 export interface ThemeSet {
     day: Theme;

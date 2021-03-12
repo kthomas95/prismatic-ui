@@ -1,11 +1,24 @@
-import css, { CSSObject } from "@styled-system/css";
-import React from "react";
-import styled, { StyledComponent } from "styled-components";
+import css, { CSSObject, SystemStyleObject } from "@styled-system/css";
+import { DOMAttributes } from "react";
+import styled, {
+    StyledComponent,
+    StyledComponentBase,
+    StyledComponentProps,
+    StyledComponentInnerAttrs,
+    ThemedStyledFunction,
+} from "styled-components";
+import { system, textStyle } from "styled-system";
 
-export interface WithCSS {
-    _css?: CSSObject;
+type GenericProps = Parameters<StyledComponent<any, any>>[0];
+export interface WithCSS extends Pick<GenericProps, "as"> {
+    _css?: SystemStyleObject;
+
     // bg?: ResponsiveValue<ColorValue | "transparent">;
 }
 
-export const Box = styled("div")<WithCSS>((props) => css(props._css));
-export type Box<T extends {} = {}> = React.FC<WithCSS & T>;
+export const Box = styled("div")<WithCSS>(
+    (props) => css(props._css),
+    textStyle
+);
+
+export type Box<T extends {} = {}> = React.FC<WithCSS & T & DOMAttributes<any>>;

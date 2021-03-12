@@ -1,5 +1,6 @@
+import { CSSObject, SystemStyleObject } from "@styled-system/css";
 import React, { forwardRef } from "react";
-import { StyledBoxProps } from "../box";
+import { Box } from "../box";
 import { PseudoBox, PseudoBoxProps } from "../pseudo-box";
 
 interface TextFieldProps {
@@ -8,10 +9,14 @@ interface TextFieldProps {
 
 const StyleTextfield = (variantColor: string) =>
     ({
-        borderColor: `${variantColor}.alpha.medium`,
-        _hover: { borderColor: `${variantColor}.alpha.dark` },
-        _focus: { boxShadow: 1, borderColor: `${variantColor}.light` },
-    } as PseudoBoxProps & StyledBoxProps);
+        borderColor: `${variantColor}.a50`,
+        _hover: { borderColor: `${variantColor}.a100` },
+        _focus: {
+            boxShadow: "md",
+            borderColor: `${variantColor}.100`,
+            bg: "background.100",
+        },
+    } as SystemStyleObject);
 
 export const TextField: PseudoBox<
     TextFieldProps,
@@ -21,9 +26,23 @@ export const TextField: PseudoBox<
         variantColor
     );
     return (
-        <PseudoBox
+        <Box
+            _css={{
+                px: 2,
+                py: 1,
+                color: "text.500",
+                bg: "background.300",
+                borderWidth: "1px",
+                borderStyle: "solid",
+                borderRadius: 4,
+                ":active": _active,
+                ":hover": _hover,
+                ":focus": _focus,
+                ...styleProps,
+                ..._css,
+            }}
             ref={ref}
-            {...{ _active, _hover, _focus, ...styleProps, ...props }}
+            {...props}
         />
     );
 });
@@ -31,11 +50,4 @@ export const TextField: PseudoBox<
 TextField.defaultProps = {
     as: "input",
     type: "text",
-    px: 2,
-    py: 1,
-    color: "text.main",
-    bg: "background.500",
-    borderWidth: "1px",
-    borderStyle: "solid",
-    borderRadius: 4,
 };
